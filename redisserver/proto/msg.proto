@@ -1,0 +1,26 @@
+syntax = "proto3";
+package pb;
+
+import "vendor/github.com/gogo/protobuf/gogoproto/gogo.proto";
+option (gogoproto.unmarshaler_all)          = true;
+option (gogoproto.goproto_unrecognized_all) = false;
+option (gogoproto.goproto_unkeyed_all)      = false;
+option (gogoproto.goproto_sizecache_all)    = false;
+
+//用户信息
+message UserInfo {
+    int32 ID = 1;
+	string Name = 2;
+	int32 Age = 3;
+	string Home = 4;
+}
+
+// TestMsgReq 测试消息请求
+message TestMsgReq {
+    repeated UserInfo Infos=1;
+}
+
+// TestMsgAck 测试消息应答
+message TestMsgAck {
+	int32 RetCode=1;
+}

@@ -1,0 +1,19 @@
+// Package conf .
+
+package conf
+
+var (
+	// ServerID .
+	ServerID int32
+	// RedisServer TCP地址
+	RedisServer = "127.0.0.1:2380"
+	// ServerName 名字
+	ServerName string
+	// DBWorkerNum 数据库工作者线程数量
+	DBWorkerNum = 3
+	// DBUrl 数据库地址(默认连接内网地址服务器)
+	RedisDBUrl    = "192.168.125.6:6379"
+	MysqlUser     = "root"               // mysql用户名
+	MysqlPassword = "123456"             // mysql密码
+	MysqlAddr     = "192.168.125.6:3306" // mysql地址
+)

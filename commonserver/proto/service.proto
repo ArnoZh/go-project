@@ -1,0 +1,24 @@
+syntax = "proto3";
+package pb;
+
+import "vendor/github.com/gogo/protobuf/gogoproto/gogo.proto";
+option (gogoproto.goproto_enum_prefix_all) = false;
+
+
+// 双向流，一段读取流中数据直到读取完成
+service RedisDBService {
+  rpc Stream(stream StreamData) returns (stream StreamData){};
+}
+
+//数据流
+message StreamData {
+  //msg数据
+  bytes Msg      = 1;
+  //生成的时间 毫秒
+  int64 GenTs    = 2;
+}
+
+
+
+/////////////////////////////////////////////////////
+
